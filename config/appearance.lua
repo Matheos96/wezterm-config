@@ -1,6 +1,5 @@
 local gpu_adapters = require('utils.gpu-adapter')
-local backdrops = require('utils.backdrops')
-local colors = require('colors.custom')
+local wezterm = require('wezterm')
 
 return {
    max_fps = 120,
@@ -19,11 +18,10 @@ return {
    cursor_blink_rate = 650,
 
    -- color scheme
-   colors = colors,
-
+   color_scheme = 'Railscasts (base16)',
+   -- color_scheme = 'Rapture',
    -- background
-   background = backdrops:initial_options(false), -- set to true if you want wezterm to start on focus mode
-
+   window_background_image = wezterm.home_dir .. '/.config/wezterm/backgrounds/landscape_forest_dark.png',
    -- scrollbar
    enable_scroll_bar = true,
 
@@ -44,6 +42,7 @@ return {
    },
    adjust_window_size_when_changing_font_size = false,
    window_close_confirmation = 'NeverPrompt',
+   window_decorations = 'RESIZE|INTEGRATED_BUTTONS',
    window_frame = {
       active_titlebar_bg = '#090909',
       -- font = fonts.font,
