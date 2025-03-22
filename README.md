@@ -142,6 +142,6 @@
 
   1.  ```sh
       # On Windows and Unix systems
-      git clone https://github.com/KevinSilvester/wezterm-config.git ~/.config/wezterm
+      git clone https://github.com/matheos96/wezterm-config.git ~/.config/wezterm
       ```
   2.  And Done!!! 🎉🎉
