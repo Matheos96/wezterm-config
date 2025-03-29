@@ -59,14 +59,13 @@ local keys = {
    -- tabs --
    -- tabs: spawn+close
    { key = 't',          mods = mod.SUPER,     action = act.SpawnTab('DefaultDomain') },
-   { key = 't',          mods = mod.SUPER_REV, action = act.SpawnTab({ DomainName = 'WSL:Ubuntu' }) },
    { key = 'w',          mods = mod.SUPER_REV, action = act.CloseCurrentTab({ confirm = false }) },
 
    -- tabs: navigation
-   { key = '[',          mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },
-   { key = ']',          mods = mod.SUPER,     action = act.ActivateTabRelative(1) },
-   { key = '[',          mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
-   { key = ']',          mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
+   { key = 'LeftArrow',  mods = 'CTRL',     action = act.ActivateTabRelative(-1) },
+   { key = 'RightArrow', mods = 'CTRL',     action = act.ActivateTabRelative(1) },
+   { key = 'LeftArrow',  mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
+   { key = 'RightArrow', mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
 
    -- tab: title
    { key = '0',          mods = mod.SUPER,     action = act.EmitEvent('tabs.manual-update-tab-title') },
@@ -110,13 +109,13 @@ local keys = {
    -- panes --
    -- panes: split panes
    {
-      key = [[\]],
-      mods = mod.SUPER,
+      key = 'DownArrow',
+      mods = 'SHIFT|ALT',
       action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
    },
    {
-      key = [[\]],
-      mods = mod.SUPER_REV,
+      key = 'RightArrow',
+      mods = 'SHIFT|ALT',
       action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
    },
 
@@ -125,10 +124,10 @@ local keys = {
    { key = 'w',     mods = mod.SUPER,     action = act.CloseCurrentPane({ confirm = false }) },
 
    -- panes: navigation
-   { key = 'k',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Up') },
-   { key = 'j',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down') },
-   { key = 'h',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left') },
-   { key = 'l',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right') },
+   { key = 'UpArrow',   mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection('Up') },
+   { key = 'DownArrow', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection('Down') },
+   { key = 'LeftArrow', mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection('Left') },
+   { key = 'RightArrow',mods = 'CTRL|SHIFT', action = act.ActivatePaneDirection('Right') },
    {
       key = 'p',
       mods = mod.SUPER_REV,
